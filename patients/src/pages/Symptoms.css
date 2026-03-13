@@ -1,0 +1,582 @@
+.symptoms-page {
+    color: #333;
+    background-color: #ffffff;
+    /* Very light mint/white bg for overall page */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Nav + Hero Wrapper — shared mint background */
+.sym-hero-wrapper {
+    background: #e2f5f0;
+}
+
+/* Navbar Pill */
+.navbar-pill {
+    background: transparent;
+    width: 1200px;
+    max-width: 95%;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 0 40px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+}
+
+.navbar-pill .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-pill .nav-logo-icon {
+    font-size: 24px;
+    color: #27B992;
+}
+
+.navbar-pill .nav-logo-text {
+    font-weight: 800;
+    color: #333;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+}
+
+.navbar-pill .nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.navbar-pill .nav-links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-pill .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Hero Section */
+.sym-hero {
+    text-align: center;
+    background: transparent;
+    padding: 120px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sym-hero-inner {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Health Assistance Badge */
+.health-assist-badge {
+    display: inline-block;
+    border: 1px solid #27B992;
+    color: #27B992;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 6px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.sym-hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #333333;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.sym-hero span {
+    color: #27B992;
+}
+
+.sym-hero p {
+    color: #888888;
+    max-width: 520px;
+    margin: 0 auto 35px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.sym-search-box {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #fff;
+    padding: 8px 8px 8px 25px;
+    border-radius: 60px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    max-width: 700px;
+    height: 65px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.sym-search-box svg {
+    color: #aaa;
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.sym-search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    color: #444;
+    background: transparent;
+}
+
+.sym-search-box input::placeholder {
+    color: #aaa;
+}
+
+.btn-find-spec {
+    background: #27B992;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    height: 100%;
+    /* Match container roughly */
+    display: flex;
+    align-items: center;
+}
+
+.btn-find-spec:hover {
+    background: #219e7c;
+}
+
+/* Quick Tags */
+.quick-tags {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 45px 0 0;
+    flex-wrap: wrap;
+    background: white;
+    width: 100%;
+    padding: 24px 40px;
+    box-sizing: border-box;
+}
+
+.sym-tag {
+    background: white;
+    color: #444;
+    padding: 9px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1.5px solid #b2e8da;
+    text-align: center;
+}
+
+.sym-tag:hover {
+    border-color: #27B992;
+    color: #27B992;
+}
+
+.sym-tag.active {
+    border-color: #27B992;
+    color: #27B992;
+    background: #f0fcf9;
+}
+
+/* Selected Symptom Highlight */
+.sym-highlight-section {
+    max-width: 520px;
+    margin: 50px auto 25px;
+    padding: 0 20px;
+}
+
+.sym-detail-card {
+    background: transparent;
+    padding: 20px 0;
+    border: none;
+    box-shadow: none;
+}
+
+.sym-detail-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-bar {
+    width: 4px;
+    height: 22px;
+    background: #27B992;
+    border-radius: 4px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.sym-detail-card p {
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.rec-depts {
+    display: flex;
+    gap: 12px;
+}
+
+.dept-pill {
+    background: white;
+    padding: 18px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    flex: 1;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dept-pill:hover {
+    transform: translateY(-2px);
+}
+
+/* Body Area Section */
+.body-area-section {
+    background: #e2f5f0;
+    padding: 60px 20px;
+}
+
+.section-head-center {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 800;
+    color: #333333;
+}
+
+.body-area-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.body-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.body-menu-item {
+    background: #fff;
+    padding: 15px 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    color: #333;
+    border: 1px solid transparent;
+    /* default border */
+    transition: all 0.2s;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    /* Soft shadow like image */
+}
+
+.body-menu-item:hover {
+    transform: translateY(-2px);
+}
+
+.body-menu-item.active {
+    background: #fff;
+    border: 1px solid #eefbf9;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background: #eefbf9;
+    /* Inactive color (light teal) */
+    border-radius: 50%;
+}
+
+.status-dot.active {
+    background: #27B992;
+    /* Active color */
+}
+
+.body-icon-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.body-detail-panel {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    min-height: 400px;
+    /* Consistent height */
+}
+
+.body-detail-header {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.symptom-list-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.symptom-item {
+    background: #fff;
+    /* White default to pop against panel */
+    padding: 20px 25px;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.01);
+}
+
+.symptom-item:hover {
+    background: #f0fcf9;
+    /* Light teal on hover as in image */
+    border-color: #eefbf9;
+    color: #222;
+}
+
+/* Insights Section */
+.insights-section {
+    padding: 10px 20px 80px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.insight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.insight-card {
+    text-align: left;
+    padding: 40px 30px;
+    border-radius: 20px;
+}
+
+.bg-cream {
+    background: #FFFBF0;
+}
+
+.bg-lavender {
+    background: #F5F0FF;
+}
+
+.bg-mint {
+    background: #E8F7F0;
+}
+
+.insight-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #27B992;
+    /* Or varied colors based on the card */
+}
+
+.insight-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.insight-card p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.link-find {
+    color: #27B992;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Steps Section */
+.steps-section {
+    background: #e2f5f0;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.step-box-center {
+    text-align: center;
+}
+
+.step-icon-lg {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 12px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+.step-box-center p {
+    font-size: 11px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.step-box-center h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+
+.step-box-center p {
+    font-size: 13px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.step-box-center h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Emergency Banner */
+.emergency-banner-container {
+    padding: 40px 20px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.emergency-banner {
+    background: #fff8f0;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 30px 40px;
+    display: flex;
+    gap: 35px;
+    align-items: flex-start;
+}
+
+.emerg-icon {
+    width: 50px;
+    height: 50px;
+    background: #FFE4CC;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #FF7F50;
+    flex-shrink: 0;
+}
+
+.emerg-content h4 {
+    color: #D35400;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.emerg-content p {
+    color: #E67E22;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .body-area-container {
+        grid-template-columns: 1fr;
+    }
+
+    .insight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-container {
+        gap: 40px;
+    }
+
+    .sym-hero h1 {
+        font-size: 32px;
+    }
+}
