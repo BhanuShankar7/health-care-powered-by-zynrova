@@ -10,6 +10,7 @@ import Symptoms from './pages/Symptoms';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Booking from './pages/Booking';
+import Profile from './pages/Profile';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
     </AuthProvider>
