@@ -253,7 +253,7 @@ const Specialties = () => {
                                 <div className="dir-item-left">
                                     <span className="dir-icon-img">{spec.icon}</span> {spec.name}
                                 </div>
-                                <span className="dir-view-link">View Doctors <FaArrowRight size={10} style={{ marginLeft: '5px' }} /></span>
+                                <span className="dir-view-link">View Doctor <FaArrowRight size={10} style={{ marginLeft: '5px' }} /></span>
                             </div>
                         ))}
                     </div>
