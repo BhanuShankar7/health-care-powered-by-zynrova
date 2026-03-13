@@ -31,44 +31,18 @@ const Login = () => {
         setLoading(true);
 
         try {
-            // Using OAuth2 spec: form-data body
-            const params = new URLSearchParams();
-            params.append('username', formData.emailOrPhone);
-            params.append('password', formData.password);
-
-            const response = await api.post('/auth/login', params, {
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-            });
-
-            const { access_token } = response.data;
-
-            // In a real app we would now fetch user details. 
-            // For Phase 2, we assume role based on token payload or a separate /me endpoint.
-            // Let's implement a simple /me fetch for correctness.
-
-            // Manually decode JWT to get role for immediate redirect (or fetch user profile)
-            // Ideally we call /me endpoint. For now decoding or fetching profile.
-            // Temporarily mock user data until /me endpoint is standardized or we decode token.
-            // But we can decode the token client side easily.
-
-            const payload = JSON.parse(atob(access_token.split('.')[1]));
+            // DUMMY LOGIN LOGIC
+            // In a real app, you would verify with an API. For now, we simulate success.
+            const dummyToken = 'dummy-jwt-token-' + Date.now();
             const user = {
-                id: payload.sub,
-                role: payload.role,
+                id: 'dummy-id',
+                role: 'patient',
                 email: formData.emailOrPhone,
-                full_name: 'User' // Placeholder
+                full_name: 'Patient User'
             };
 
-            login(access_token, user);
-
-            if (user.role === 'doctor') {
-                // If this was the patient app, we might want to warn them or redirect.
-                // Assuming this login page handles both for now, or Patient Portal login.
-                window.location.href = 'http://localhost:3000'; // Redirect to Doctor Dashboard
-            } else {
-                navigate('/');
-            }
-
+            login(dummyToken, user);
+            navigate('/');
         } catch (err) {
             console.error('Login Failed', err);
             setError('Invalid credentials. Please try again.');

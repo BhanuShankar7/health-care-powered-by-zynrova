@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { FaFacebook } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import './Auth.css';
 
 const Signup = () => {
+    const navigate = useNavigate();
+    const { login } = useAuth();
     const [formData, setFormData] = useState({
         fullName: '',
         emailOrPhone: '',
@@ -22,8 +25,18 @@ const Signup = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Signup attempt:', formData);
-        // Add signup logic here
+        
+        // DUMMY SIGNUP LOGIC
+        const dummyToken = 'dummy-jwt-token-' + Date.now();
+        const user = {
+            id: 'dummy-id-' + Date.now(),
+            role: 'patient',
+            email: formData.emailOrPhone,
+            full_name: formData.fullName
+        };
+
+        login(dummyToken, user);
+        navigate('/');
     };
 
     return (

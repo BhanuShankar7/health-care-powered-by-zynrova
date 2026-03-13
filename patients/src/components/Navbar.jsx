@@ -26,8 +26,11 @@ const Navbar = () => {
             </ul>
             <div className="nav-actions">
                 {isAuthenticated ? (
-                    <div className="profile-icon" onClick={logout} style={{ cursor: 'pointer', fontSize: '28px', color: '#555', display: 'flex', alignItems: 'center' }}>
-                         <FaUserCircle />
+                    <div className="nav-profile-group" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                        <div className="profile-icon" style={{ cursor: 'pointer', fontSize: '32px', color: '#27B992', display: 'flex', alignItems: 'center', transition: 'transform 0.2s' }}>
+                             <FaUserCircle onClick={() => navigate('/profile')} />
+                        </div>
+                        <button className="login-link" onClick={logout} style={{ background: 'none', border: 'none', padding: 0, fontSize: '14px', color: '#888' }}>Logout</button>
                     </div>
                 ) : (
                     <a className="login-link" onClick={() => navigate('/login')}>Login / Sign Up</a>
