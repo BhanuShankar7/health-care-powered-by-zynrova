@@ -276,14 +276,19 @@
 .rating-select {
     display: flex;
     gap: 8px;
-    color: #f0f0f0;
-    font-size: 32px;
+    color: #ddd; /* Light gray for inactive */
+    font-size: 24px;
     cursor: pointer;
     margin-top: 10px;
 }
 
 .rating-select .active {
-    color: #FFD700;
+    color: #FFD700; /* Gold for active stars */
+}
+
+.rating-select span:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
 }
 
 .apply-btn {
@@ -544,81 +549,92 @@
     font-weight: 700;
 }
 
-/* --- Trust Banner --- */
-.trust-banner {
-    background: #d1f1e9;
-    /* Light teal bg */
-    border-radius: 24px;
-    margin: 50px auto 50px;
-    max-width: 950px;
-    padding: 40px 50px;
-    display: flex;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.trust-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.trust-icon-box {
-    width: 36px;
-    height: 36px;
-    background: white;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-color);
-    font-size: 16px;
-    margin-bottom: 14px;
-}
-
-.trust-item h4 {
-    margin: 0 0 7px 0;
-    font-size: 15px;
-    color: #333;
-    font-weight: 700;
-}
-
-.trust-item p {
-    margin: 0;
-    font-size: 13px;
-    color: #666;
-    line-height: 1.5;
-}
 
 /* Mobile Responsive */
 @media (max-width: 900px) {
+    .finder-header {
+        padding: 100px 20px 40px;
+    }
+
+    .finder-title {
+        font-size: 32px;
+        letter-spacing: -0.5px;
+    }
+
+    .finder-subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .finder-search-box {
+        flex-direction: column;
+        padding: 25px;
+        gap: 15px;
+        width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    .finder-search-field {
+        width: 100%;
+    }
+
+    .finder-btn {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 0;
+    }
+
     .finder-content {
         flex-direction: column;
+        padding: 0 15px;
+        margin: 30px auto;
+        gap: 20px;
     }
 
     .filters-sidebar {
         width: 100%;
-    }
-
-    .trust-banner {
-        flex-direction: column;
-        padding: 40px;
+        box-sizing: border-box;
     }
 
     .doctor-card-horizontal {
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
+        padding: 20px;
+    }
+
+    .card-profile-section {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .card-info-col {
+        text-align: center;
+    }
+
+    .doc-details {
+        align-items: center;
+    }
+
+    .card-tags {
+        justify-content: center;
     }
 
     .card-action-col {
         width: 100%;
-        align-items: flex-start;
+        align-items: center;
         border-left: none;
         padding-left: 0;
         border-top: 1px solid #f0f0f0;
         padding-top: 20px;
+        margin-top: 20px;
+    }
+
+    .price-row {
+        justify-content: center !important;
+        gap: 15px;
     }
 }

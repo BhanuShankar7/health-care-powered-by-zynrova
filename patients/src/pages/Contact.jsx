@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowRight, FaSearch, FaRegFolderOpen, FaRegClock, FaMapMarkerAlt, FaPhoneAlt, FaPlus, FaMinus } from 'react-icons/fa';
+import { FcSearch, FcFolder, FcAlarmClock } from "react-icons/fc";
 import { FaHeartbeat as LogoIcon } from 'react-icons/fa';
 import Footer from '../components/Footer';
 import './Contact.css';
@@ -15,10 +16,10 @@ const Contact = () => {
     };
 
     const faqs = [
-        { q: "How Does Your Interior Design Process Work?", a: "We start with a consultation to understand your needs, followed by design concepts, revisions, and final implementation." },
-        { q: "Do You Provide Customized Interior Solutions?", a: "Yes, every project is tailored specifically to the client's preferences and space requirements." },
-        { q: "How Long Does An Interior Project Usually Take?", a: "Timelines vary by project size, but typically range from 2 weeks for single rooms to a few months for full homes." },
-        { q: "Can I Choose My Own Materials And Finishes?", a: "Absolutely! We encourage client involvement/selection to ensure the final result feels personal to you." }
+        { q: "How can I reschedule or cancel my appointment?", a: "You can manage your appointments through your profile dashboard. Select the appointment you wish to change and follow the reschedule or cancel options." },
+        { q: "What should I do if I'm facing technical issues during a video call?", a: "If you experience any disruptions, try refreshing the page or checking your internet connection. You can also contact our 24/7 technical support team for immediate assistance." },
+        { q: "How do I get my prescription after an online consultation?", a: "Your digital prescription will be available in your dashboard immediately after the consultation. You can download it or share it directly with a pharmacy." },
+        { q: "Whom should I contact for medical emergencies?", a: "For any life-threatening emergencies, please call your local emergency services (like 102/108 in India) immediately. Our platform is for scheduled consultations and non-emergency care." }
     ];
 
     return (
@@ -42,19 +43,19 @@ const Contact = () => {
             <div className="support-wrapper">
                 <section className="support-section">
                     <div className="support-card">
-                        <div className="support-icon"><img src="/magnifying_glass.png" alt="Search" style={{width: '32px', height: '32px'}} /></div>
+                        <div className="support-icon"><FcSearch size={45} /></div>
                         <h3>Customer Support</h3>
                         <p>Get help with bookings and consultations</p>
                         <a href="#" className="support-email">support@medspecialist.com</a>
                     </div>
                     <div className="support-card">
-                        <div className="support-icon"><img src="/folder.png" alt="Folder" style={{width: '32px', height: '32px'}} /></div>
+                        <div className="support-icon"><FcFolder size={45} /></div>
                         <h3>Doctor Support</h3>
                         <p>For doctors & clinics using our platform</p>
                         <a href="#" className="support-email">doctors@medspecialist.com</a>
                     </div>
                     <div className="support-card">
-                        <div className="support-icon"><img src="/clock.png" alt="Clock" style={{width: '32px', height: '32px'}} /></div>
+                        <div className="support-icon"><FcAlarmClock size={45} /></div>
                         <h3>Partnerships</h3>
                         <p>Collaborate or integrate with our network</p>
                         <a href="#" className="support-email">partners@medspecialist.com</a>

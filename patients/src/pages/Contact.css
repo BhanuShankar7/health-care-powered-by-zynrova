@@ -1,6 +1,7 @@
 .contact-page {
     color: #333;
     background-color: #e2f5f0;
+    font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
 
@@ -165,6 +166,7 @@
     border: 1px solid transparent;
     border-radius: 10px;
     font-size: 14px;
+    font-family: inherit;
     color: #333;
     outline: none;
     transition: all 0.2s;
@@ -322,7 +324,7 @@
     background: #fff;
     margin-bottom: 20px;
     border-radius: 15px;
-    padding: 38px 40px;
+    padding: 20px 30px;
     text-align: left;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
@@ -366,11 +368,30 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-
-    .contact-hero,
-    .office-section {
+    .contact-hero {
         grid-template-columns: 1fr;
         text-align: center;
+        margin: 100px auto 60px;
+        padding: 0 20px;
+    }
+
+    .contact-hero-content {
+        padding-left: 0;
+    }
+
+    .contact-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .office-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .map-container {
+        min-width: 100%;
+        height: 300px;
     }
 
     .contact-hero-content p,
@@ -380,10 +401,16 @@
 
     .support-section {
         grid-template-columns: 1fr;
+        padding: 0 20px;
     }
 
     .contact-form-section {
-        padding: 30px;
+        padding: 35px 25px;
+        margin: 0 auto 60px;
+        width: 92%;
+        box-sizing: border-box;
+        border-radius: 25px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.05);
     }
 
     .form-grid {
@@ -393,5 +420,10 @@
     .office-detail-item {
         justify-content: center;
         text-align: left;
+    }
+
+    .contact-page .faq-list {
+        width: 100%;
+        padding: 0;
     }
 }

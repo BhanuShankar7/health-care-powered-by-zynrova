@@ -125,6 +125,25 @@ const Profile = () => {
                 </div>
             </main>
 
+            {/* Trust Banner Reuse */}
+            <div className="trust-banner" style={{ maxWidth: '1200px', margin: '50px auto' }}>
+                <div className="trust-item">
+                    <div className="trust-icon-box"><img src="/heartbox.png" alt="Verified" style={{ width: '22px', height: '22px', objectFit: 'contain' }} /></div>
+                    <h4>Verified Doctors Only</h4>
+                    <p>Stringent background checks for your peace of mind.</p>
+                </div>
+                <div className="trust-item">
+                    <div className="trust-icon-box"><img src="/heartbox.png" alt="Booking" style={{ width: '22px', height: '22px', objectFit: 'contain' }} /></div>
+                    <h4>Instant Booking</h4>
+                    <p>Book slots in real-time with zero waiting time.</p>
+                </div>
+                <div className="trust-item">
+                    <div className="trust-icon-box"><img src="/heartbox.png" alt="Secure" style={{ width: '22px', height: '22px', objectFit: 'contain' }} /></div>
+                    <h4>Secure Medical Data</h4>
+                    <p>Your privacy is our priority with HIPAA compliance.</p>
+                </div>
+            </div>
+
             <Footer />
         </div>
     );

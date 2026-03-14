@@ -148,29 +148,36 @@
     margin-bottom: 30px;
 }
 
-.who-tabs {
+.who-badges {
     display: flex;
-    gap: 0;
-    margin-bottom: 20px;
-    background: #f0fcf9;
-    width: fit-content;
-    border-radius: 10px;
-    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+    background: #f8fcfa;
+    border-radius: 20px;
+    padding: 20px 0;
+    margin-top: 30px;
+    border: 1px solid #eef6f3;
 }
 
-.who-tab {
-    padding: 10px 40px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #666;
+.who-badge {
+    text-align: center;
+    flex: 1;
+}
+
+.who-badge:not(:last-child) {
+    border-right: 1px solid #e0ece7;
+}
+
+.who-badge-title {
     font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
 }
 
-.who-tab.active {
-    background: #fff;
-    color: #333;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+.who-badge-subtitle {
+    font-size: 12px;
+    color: #888;
 }
 
 .who-image img {
@@ -248,9 +255,10 @@
 }
 
 .feature-card p {
-    font-size: 13px;
-    color: #888;
+    font-size: 14px;
+    color: #555;
     line-height: 1.6;
+    font-weight: 500;
 }
 
 /* Trusted By Section */
@@ -357,6 +365,13 @@
     margin: 0;
 }
 
+.section-subtitle-highlight {
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
 .how-steps {
     display: flex;
     justify-content: center;
@@ -374,9 +389,9 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
-.step-icon-img {
-    margin-bottom: 25px;
-    display: block;
+.how-icon-box {
+    margin-bottom: 20px;
+    display: inline-block;
 }
 
 .how-step h4 {
@@ -387,9 +402,10 @@
 }
 
 .how-step p {
-    font-size: 13px;
-    color: #888;
+    font-size: 14px;
+    color: #555;
     line-height: 1.6;
+    font-weight: 500;
 }
 
 /* Safety Section */

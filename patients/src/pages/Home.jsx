@@ -25,10 +25,10 @@ const Home = () => {
     };
 
     const faqs = [
-        { q: "How Does Your Interior Design Process Work?", a: "We start with a consultation to understand your needs, followed by design concepts, revisions, and final implementation." },
-        { q: "Do You Provide Customized Interior Solutions?", a: "Yes, every project is tailored specifically to the client's preferences and space requirements." },
-        { q: "How Long Does An Interior Project Usually Take?", a: "Timelines vary by project size, but typically range from 2 weeks for single rooms to a few months for full homes." },
-        { q: "Can I Choose My Own Materials And Finishes?", a: "Absolutely! We encourage client involvement/selection to ensure the final result feels personal to you." }
+        { q: "How do I book an appointment with a doctor?", a: "You can search for doctors by specialty or location, view their real-time availability, and book an instant appointment directly through our platform." },
+        { q: "Are the doctors on your platform verified?", a: "Yes, every doctor goes through a rigorous verification process, checking their medical registration, certifications, and experience before being listed." },
+        { q: "Can I consult with a doctor online via video call?", a: "Absolutely! We offer secure, high-definition video consultations so you can receive expert medical advice from the comfort of your home." },
+        { q: "Is my medical data and appointment history secure?", a: "We prioritize your privacy. All your medical records and consultation history are encrypted and stored securely, accessible only by you and your authorized health provider." }
     ];
 
     return (
@@ -302,47 +302,47 @@ const Home = () => {
                 <div className="doctors-grid">
                     <div className="doctor-card">
                         <div className="doctor-img-container">
-                            <img src="/dr_sarah_johnson_1.png" alt="Dr. Sarah Johnson" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/dr_sarah_mitchell.png" alt="Dr. Sarah Mitchell" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="rating-badge"><FaStar size={10} /> 4.8</div>
                         </div>
                         <div className="doctor-card-content">
-                            <h4>Dr. Sarah Johnson</h4>
+                            <h4>Dr. Sarah Mitchell</h4>
                             <span className="doctor-specialty">Cardiology Specialist</span>
                             <div className="doctor-meta">
                                 <span><FaMapMarkerAlt /> New York</span>
                                 <span>12 Years Experience</span>
                             </div>
-                            <button className="btn-primary" style={{ width: '100%', borderRadius: '8px', justifyContent: 'center' }} onClick={() => navigate('/booking', { state: { doctor: { name: 'Dr. Sarah Johnson', specialty: 'Cardiology Specialist', image: '/dr_sarah_johnson_1.png', location: 'New York', consultation_fee: '150' } } })}>Book Appointment</button>
+                            <button className="btn-primary" style={{ width: '100%', borderRadius: '8px', justifyContent: 'center' }} onClick={() => navigate('/booking', { state: { doctor: { name: 'Dr. Sarah Mitchell', specialty: 'Cardiology Specialist', image: '/dr_sarah_mitchell.png', location: 'New York', consultation_fee: '150' } } })}>Book Appointment</button>
                         </div>
                     </div>
                     <div className="doctor-card">
                         <div className="doctor-img-container">
-                            <img src="/dr_sarah_johnson.png" alt="Dr. Mark Wilson" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/dr_james_wilson.png" alt="Dr. James Wilson" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="rating-badge"><FaStar size={10} /> 4.9</div>
                         </div>
                         <div className="doctor-card-content">
-                            <h4>Dr. Mark Wilson</h4>
-                            <span className="doctor-specialty">Dental Specialist</span>
+                            <h4>Dr. James Wilson</h4>
+                            <span className="doctor-specialty">General Physician</span>
                             <div className="doctor-meta">
                                 <span><FaMapMarkerAlt /> Seattle</span>
-                                <span>8 Years Experience</span>
+                                <span>10 Years Experience</span>
                             </div>
-                            <button className="btn-primary" style={{ width: '100%', borderRadius: '8px', justifyContent: 'center' }} onClick={() => navigate('/booking', { state: { doctor: { name: 'Dr. Mark Wilson', specialty: 'Dental Specialist', image: '/dr_sarah_johnson.png', location: 'Seattle', consultation_fee: '850' } } })}>Book Appointment</button>
+                            <button className="btn-primary" style={{ width: '100%', borderRadius: '8px', justifyContent: 'center' }} onClick={() => navigate('/booking', { state: { doctor: { name: 'Dr. James Wilson', specialty: 'General Physician', image: '/dr_james_wilson.png', location: 'Seattle', consultation_fee: '850' } } })}>Book Appointment</button>
                         </div>
                     </div>
                     <div className="doctor-card">
                         <div className="doctor-img-container">
-                            <img src="/dr_sarah_johnson_2.png" alt="Dr. Emily Jones" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/dr_rahul_verma.png" alt="Dr. Rahul Verma" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="rating-badge"><FaStar size={10} /> 5.0</div>
                         </div>
                         <div className="doctor-card-content">
-                            <h4>Dr. Emily Jones</h4>
+                            <h4>Dr. Rahul Verma</h4>
                             <span className="doctor-specialty">Orthopedic specialist</span>
                             <div className="doctor-meta">
                                 <span><FaMapMarkerAlt /> Miami</span>
                                 <span>15 Years Experience</span>
                             </div>
-                            <button className="btn-primary" style={{ width: '100%', borderRadius: '8px', justifyContent: 'center' }} onClick={() => navigate('/booking', { state: { doctor: { name: 'Dr. Emily Jones', specialty: 'Orthopedic specialist', image: '/dr_sarah_johnson_2.png', location: 'Miami', consultation_fee: '150' } } })}>Book Appointment</button>
+                            <button className="btn-primary" style={{ width: '100%', borderRadius: '8px', justifyContent: 'center' }} onClick={() => navigate('/booking', { state: { doctor: { name: 'Dr. Rahul Verma', specialty: 'Orthopedic specialist', image: '/dr_rahul_verma.png', location: 'Miami', consultation_fee: '150' } } })}>Book Appointment</button>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { FaChevronLeft, FaCheckCircle, FaMapMarkerAlt, FaRegClock, FaUser, FaPhoneAlt, FaCalendarAlt, FaStethoscope, FaChevronRight } from 'react-icons/fa';
 import api from '../lib/api';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import './Booking.css';
 
 const DAYS_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -518,13 +520,17 @@ const Booking = () => {
 
     return (
         <div className="booking-page-container">
-            {renderHeader()}
-            <div className="booking-content-wrapper">
-                {step === 1 && renderSlotSelection()}
-                {step === 2 && renderPatientDetails()}
-                {step === 3 && renderReview()}
-                {step === 4 && renderPayment()}
+            <Navbar />
+            <div style={{ marginTop: '80px' }}>
+                {renderHeader()}
+                <div className="booking-content-wrapper">
+                    {step === 1 && renderSlotSelection()}
+                    {step === 2 && renderPatientDetails()}
+                    {step === 3 && renderReview()}
+                    {step === 4 && renderPayment()}
+                </div>
             </div>
+            <Footer />
         </div>
     );
 };

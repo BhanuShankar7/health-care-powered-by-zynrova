@@ -19,80 +19,94 @@ const FindDoctors = () => {
         {
             id: 1,
             full_name: 'Dr. James Wilson',
-            image: '/Ellipse 4031.png',
+            image: '/dr_james_wilson.png',
             specialization: 'General Physician',
-            bio: 'Dr. James Wilson is a dedicated General Physician with a focus on comprehensive health care.'
+            bio: 'Dr. James Wilson is a dedicated General Physician with a focus on comprehensive health care.',
+            experience: 10,
+            fees: 500,
+            rating: 4.8,
+            consultation_type: 'Both',
+            availability: 'Today',
+            location: 'New York'
         },
         {
             id: 2,
             full_name: 'Dr. David Kim',
-            image: '/Ellipse 4032.png',
+            image: '/dr_david_kim.png',
             specialization: 'General Physician',
-            bio: 'Dr. David Kim brings a wealth of knowledge to his practice as a General Physician.'
+            bio: 'Dr. David Kim brings a wealth of knowledge to his practice as a General Physician.',
+            experience: 5,
+            fees: 300,
+            rating: 4.5,
+            consultation_type: 'Online',
+            availability: 'Tomorrow',
+            location: 'Los Angeles'
         },
         {
             id: 3,
             full_name: 'Dr. Robert Fox',
-            image: '/Ellipse 4033.png',
+            image: '/dr_robert_fox.png',
             specialization: 'General Physician',
-            bio: 'Dr. Robert Fox is known for his thorough examinations and friendly demeanor.'
+            bio: 'Dr. Robert Fox is known for his thorough examinations and friendly demeanor.',
+            experience: 12,
+            fees: 600,
+            rating: 4.9,
+            consultation_type: 'Clinic',
+            availability: 'Today',
+            location: 'Chicago'
         },
         {
             id: 4,
-            full_name: 'Dr. Linda Gregory',
-            image: '/Ellipse 4034.png',
-            specialization: 'General Physician',
-            bio: 'Dr. Linda Gregory has a strong background in family medicine and preventive care.'
+            full_name: 'Dr. Sarah Mitchell',
+            image: '/dr_sarah_mitchell.png',
+            specialization: 'Cardiologist',
+            bio: 'Dr. Sarah Mitchell specializes in preventive care and comprehensive adult medicine.',
+            experience: 15,
+            fees: 800,
+            rating: 4.7,
+            consultation_type: 'Online',
+            availability: 'Today',
+            location: 'Houston'
         },
         {
             id: 5,
-            full_name: 'Dr. Sarah Mitchell',
-            image: '/Ellipse 4035.png',
-            specialization: 'General Physician',
-            bio: 'Dr. Sarah Mitchell specializes in preventive care and comprehensive adult medicine.'
+            full_name: 'Dr. Priya Sharma',
+            image: '/dr_priya_sharma.png',
+            specialization: 'Cardiologist',
+            bio: 'Dr. Priya Sharma is a leading Cardiologist with 12 years of experience in advanced heart and vascular care.',
+            experience: 8,
+            fees: 700,
+            rating: 4.6,
+            consultation_type: 'Clinic',
+            availability: 'Tomorrow',
+            location: 'Mumbai'
         },
         {
             id: 6,
-            full_name: 'Dr. Priya Sharma',
-            image: '/Ellipse 4031.png',
-            specialization: 'Cardiologist',
-            bio: 'Dr. Priya Sharma is a leading Cardiologist with 12 years of experience in advanced heart and vascular care.'
+            full_name: 'Dr. Arjun Mehta',
+            image: '/dr_arjun_mehta.png',
+            specialization: 'Dentist',
+            bio: 'Dr. Arjun Mehta provides personalized dental care with a focus on patient comfort.',
+            experience: 6,
+            fees: 400,
+            rating: 4.4,
+            consultation_type: 'Both',
+            availability: 'Today',
+            location: 'Delhi'
         },
         {
             id: 7,
-            full_name: 'Dr. Arjun Mehta',
-            image: '/Ellipse 4032.png',
-            specialization: 'Cardiologist',
-            bio: 'Dr. Arjun Mehta specializes in interventional cardiology, offering cutting-edge diagnostics and treatment.'
-        },
-        {
-            id: 8,
-            full_name: 'Dr. Neha Kapoor',
-            image: '/Ellipse 4033.png',
-            specialization: 'Dentist',
-            bio: 'Dr. Neha Kapoor is a skilled Dentist offering comprehensive oral health treatments from routine cleaning to complex surgery.'
-        },
-        {
-            id: 9,
             full_name: 'Dr. Rahul Verma',
-            image: '/Ellipse 4034.png',
-            specialization: 'Dentist',
-            bio: 'Dr. Rahul Verma provides personalized dental care with a focus on patient comfort and advanced treatment methods.'
-        },
-        {
-            id: 10,
-            full_name: 'Dr. Suresh Patel',
-            image: '/Ellipse 4035.png',
+            image: '/dr_rahul_verma.png',
             specialization: 'Orthopedic',
-            bio: 'Dr. Suresh Patel is an expert Orthopedic surgeon specializing in musculoskeletal injuries, joint replacement, and bone health.'
-        },
-        {
-            id: 11,
-            full_name: 'Dr. Anjali Singh',
-            image: '/Ellipse 4031.png',
-            specialization: 'Orthopedic',
-            bio: 'Dr. Anjali Singh offers specialist care for sports injuries, spinal issues, and complex orthopedic conditions.'
-        },
+            bio: 'Dr. Rahul Verma provides personalized dental care with a focus on patient comfort.',
+            experience: 20,
+            fees: 1000,
+            rating: 5.0,
+            consultation_type: 'Clinic',
+            availability: 'Today',
+            location: 'Bangalore'
+        }
     ];
 
     const location = useLocation();
@@ -105,8 +119,20 @@ const FindDoctors = () => {
     ];
 
     const [selectedSpecialties, setSelectedSpecialties] = useState(
-        incomingSpecialty ? [incomingSpecialty] : ['General Physician']
+        incomingSpecialty ? [incomingSpecialty] : []
     );
+    const [searchQuery, setSearchQuery] = useState('');
+    const [locationQuery, setLocationQuery] = useState('');
+    const [consultationType, setConsultationType] = useState('All');
+    const [availability, setAvailability] = useState('All');
+    const [experience, setExperience] = useState(0);
+    const [feesMax, setFeesMax] = useState(1000);
+    const [minRating, setMinRating] = useState(0);
+    const [tempFilters, setTempFilters] = useState({
+        search: '',
+        location: '',
+        type: 'Online'
+    });
 
     const toggleSpecialty = (specialty) => {
         setSelectedSpecialties(prev =>
@@ -117,7 +143,20 @@ const FindDoctors = () => {
     };
 
     const clearFilters = () => {
-        setSelectedSpecialties(['General Physician']);
+        setSelectedSpecialties([]);
+        setSearchQuery('');
+        setLocationQuery('');
+        setConsultationType('All');
+        setAvailability('All');
+        setExperience(0);
+        setFeesMax(1000);
+        setMinRating(0);
+    };
+
+    const applySearch = () => {
+        setSearchQuery(tempFilters.search);
+        setLocationQuery(tempFilters.location);
+        setConsultationType(tempFilters.type);
     };
 
     // Fetch doctors with TanStack Query, fallback to mock data on error
@@ -133,12 +172,37 @@ const FindDoctors = () => {
     });
 
     // Use mock data if API fails
-    const allDoctors = isError ? mockDoctors : (doctors || mockDoctors);
+    const allDoctors = (isError || !doctors) ? mockDoctors : doctors;
 
-    // Filter by selected specialties
-    const displayDoctors = selectedSpecialties.length > 0
-        ? allDoctors.filter(d => selectedSpecialties.includes(d.specialization))
-        : allDoctors;
+    // Multi-criteria filtering
+    const displayDoctors = allDoctors.filter(doctor => {
+        // Specialty Filter
+        if (selectedSpecialties.length > 0 && !selectedSpecialties.includes(doctor.specialization)) return false;
+        
+        // Search Filter (Name or Specialty)
+        if (searchQuery && !doctor.full_name.toLowerCase().includes(searchQuery.toLowerCase()) && 
+            !doctor.specialization.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+        
+        // Location Filter
+        if (locationQuery && doctor.location && !doctor.location.toLowerCase().includes(locationQuery.toLowerCase())) return false;
+        
+        // Consultation Type Filter
+        if (consultationType !== 'All' && doctor.consultation_type !== 'Both' && doctor.consultation_type !== consultationType) return false;
+        
+        // Availability Filter
+        if (availability !== 'All' && doctor.availability !== availability) return false;
+        
+        // Experience Filter (Treat 0 as 'All')
+        if (experience > 0 && doctor.experience < experience) return false;
+        
+        // Fees Filter (Treat 0 as 'All' per user request)
+        if (feesMax > 0 && (doctor.fees || 0) > feesMax) return false;
+        
+        // Rating Filter
+        if (doctor.rating < minRating) return false;
+
+        return true;
+    });
 
     if (isLoading) {
         return (
@@ -163,27 +227,41 @@ const FindDoctors = () => {
                         <label>Search</label>
                         <div className="finder-input-wrapper">
                             <FaSearch />
-                            <input type="text" placeholder="Doctors, specialty or symptoms..." />
+                            <input 
+                                type="text" 
+                                placeholder="Doctors, specialty or symptoms..." 
+                                value={tempFilters.search}
+                                onChange={(e) => setTempFilters({...tempFilters, search: e.target.value})}
+                            />
                         </div>
                     </div>
                     <div className="finder-search-field">
                         <label>Location</label>
                         <div className="finder-input-wrapper">
                             <FaMapMarkerAlt />
-                            <input type="text" placeholder="Near by clinic, hospitals..." />
+                            <input 
+                                type="text" 
+                                placeholder="Near by clinic, hospitals..." 
+                                value={tempFilters.location}
+                                onChange={(e) => setTempFilters({...tempFilters, location: e.target.value})}
+                            />
                         </div>
                     </div>
                     <div className="finder-search-field">
                         <label>Consultation Type</label>
                         <div className="finder-input-wrapper">
                             <FaVideo />
-                            <select>
-                                <option>Online</option>
-                                <option>Clinic</option>
+                            <select 
+                                value={tempFilters.type}
+                                onChange={(e) => setTempFilters({...tempFilters, type: e.target.value})}
+                            >
+                                <option value="All">All types</option>
+                                <option value="Online">Online</option>
+                                <option value="Clinic">Clinic</option>
                             </select>
                         </div>
                     </div>
-                    <button className="finder-btn">Search</button>
+                    <button className="finder-btn" onClick={applySearch}>Search</button>
                 </div>
             </header>
 
@@ -218,14 +296,19 @@ const FindDoctors = () => {
                         <input type="text" className="search-input-small" placeholder="Symptoms..." />
                     </div>
 
-                    {/* Consultation Type */}
+                    {/* Consultation Type Sidebar */}
                     <div className="filter-group">
                         <h4>Consultation Type</h4>
                         <div className="checkbox-list">
-                            <label className="checkbox-item"><input type="checkbox" /> All</label>
-                            <label className="checkbox-item"><input type="checkbox" /> Online</label>
-                            <label className="checkbox-item"><input type="checkbox" /> Clinic</label>
-                            <label className="checkbox-item"><input type="checkbox" /> Both</label>
+                            <label className="checkbox-item">
+                                <input type="radio" name="consultType" checked={consultationType === 'All'} onChange={() => setConsultationType('All')} /> All
+                            </label>
+                            <label className="checkbox-item">
+                                <input type="radio" name="consultType" checked={consultationType === 'Online'} onChange={() => setConsultationType('Online')} /> Online
+                            </label>
+                            <label className="checkbox-item">
+                                <input type="radio" name="consultType" checked={consultationType === 'Clinic'} onChange={() => setConsultationType('Clinic')} /> Clinic
+                            </label>
                         </div>
                     </div>
 
@@ -233,9 +316,18 @@ const FindDoctors = () => {
                     <div className="filter-group">
                         <h4 style={{ color: '#333' }}>Availability</h4>
                         <div className="availability-toggles">
-                            <button className="toggle-btn active">All</button>
-                            <button className="toggle-btn">Today</button>
-                            <button className="toggle-btn">Tomorrow</button>
+                            <button 
+                                className={`toggle-btn ${availability === 'All' ? 'active' : ''}`}
+                                onClick={() => setAvailability('All')}
+                            >All</button>
+                            <button 
+                                className={`toggle-btn ${availability === 'Today' ? 'active' : ''}`}
+                                onClick={() => setAvailability('Today')}
+                            >Today</button>
+                            <button 
+                                className={`toggle-btn ${availability === 'Tomorrow' ? 'active' : ''}`}
+                                onClick={() => setAvailability('Tomorrow')}
+                            >Tomorrow</button>
                         </div>
                     </div>
 
@@ -243,10 +335,17 @@ const FindDoctors = () => {
                     <div className="filter-group">
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', alignItems: 'center' }}>
                             <h4 style={{ margin: 0, color: '#333' }}>Experience</h4>
-                            <span style={{ fontSize: '13px', color: '#27B992' }}>0+ Yrs</span>
+                            <span style={{ fontSize: '13px', color: '#27B992' }}>{experience === 0 ? 'All' : `${experience}+ Yrs`}</span>
                         </div>
                         <div className="range-slider-container">
-                            <input type="range" min="0" max="20" defaultValue="0" className="range-slider" />
+                            <input 
+                                type="range" 
+                                min="0" 
+                                max="20" 
+                                value={experience} 
+                                onChange={(e) => setExperience(parseInt(e.target.value))}
+                                className="range-slider" 
+                            />
                         </div>
                     </div>
 
@@ -254,10 +353,17 @@ const FindDoctors = () => {
                     <div className="filter-group">
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', alignItems: 'center' }}>
                             <h4 style={{ margin: 0, color: '#333' }}>Fees Max</h4>
-                            <span style={{ fontSize: '13px', color: '#27B992' }}>$500</span>
+                            <span style={{ fontSize: '13px', color: '#27B992' }}>{feesMax === 0 ? 'All' : `₹${feesMax}`}</span>
                         </div>
                         <div className="range-slider-container">
-                            <input type="range" min="0" max="1000" defaultValue="500" className="range-slider" />
+                            <input 
+                                type="range" 
+                                min="0" 
+                                max="1000" 
+                                value={feesMax} 
+                                onChange={(e) => setFeesMax(parseInt(e.target.value))}
+                                className="range-slider" 
+                            />
                         </div>
                     </div>
 
@@ -265,11 +371,15 @@ const FindDoctors = () => {
                     <div className="filter-group">
                         <h4 style={{ color: '#333' }}>Minimum Rating</h4>
                         <div className="rating-select">
-                            <FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar />
+                            {[1, 2, 3, 4, 5].map((star) => (
+                                <span key={star} onClick={() => setMinRating(star)}>
+                                    {minRating >= star ? <FaStar className="active" /> : <FaRegStar />}
+                                </span>
+                            ))}
                         </div>
                     </div>
 
-                    <button className="apply-btn">Apply Filters</button>
+                    <button className="apply-btn" onClick={() => {/* Filtering is live, button can just scroll to top or close mobile menu */ window.scrollTo({top: 400, behavior: 'smooth'})}}>Apply Filters</button>
                 </aside>
 
                 {/* Doctors List */}
@@ -302,9 +412,9 @@ const FindDoctors = () => {
                                     <div className="doc-details">
                                         <div className="doc-detail-row">
                                             <FaBriefcase color="#bbb" size={12} />
-                                            <span>8 yrs experience</span>
+                                            <span>{doctor.experience || 8} yrs experience</span>
                                             <FaStar color="#FFD700" size={12} style={{ marginLeft: '12px' }} />
-                                            <span style={{ color: '#EAA300', fontWeight: 'bold', fontSize: '13px' }}>4.4</span>
+                                            <span style={{ color: '#EAA300', fontWeight: 'bold', fontSize: '13px' }}>{doctor.rating || 4.4}</span>
                                         </div>
                                         <div className="doc-detail-row">
                                             <span className="lang-icon">文A</span>
@@ -320,14 +430,14 @@ const FindDoctors = () => {
                             <div className="card-action-col">
                                 <div className="price-row" style={{ textAlign: 'right', marginBottom: '18px', width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <div style={{ fontSize: '12px', color: '#888' }}>Consultation Fee</div>
-                                    <div style={{ fontSize: '24px', fontWeight: '800', color: '#27B992' }}>₹80</div>
+                                    <div style={{ fontSize: '24px', fontWeight: '800', color: '#27B992' }}>₹{doctor.fees || 80}</div>
                                 </div>
                                 <div className="slot-container">
                                     <span className="slot-label">Next Slot</span>
-                                    <span className="slot-value">10:00 AM</span>
+                                    <span className="slot-value">{doctor.availability === 'Today' ? 'Today' : 'Tomorrow'}, 10:00 AM</span>
                                 </div>
                                 <div style={{ width: '100%' }}>
-                                    <button className="btn-book-sm" onClick={() => navigate('/booking', { state: { doctor: { ...doctor, consultation_fee: '₹80', location: 'Heartcare Specialist Center' } } })}>Book Appointment</button>
+                                    <button className="btn-book-sm" onClick={() => navigate('/booking', { state: { doctor: { ...doctor, consultation_fee: `₹${doctor.fees || 80}`, location: 'Heartcare Specialist Center' } } })}>Book Appointment</button>
                                     <div style={{ textAlign: 'center', marginTop: '10px' }}>
                                         <a onClick={() => navigate('/doctor-profile', { state: { doctor } })} className="view-profile" style={{ cursor: 'pointer' }}>View Profile</a>
                                     </div>

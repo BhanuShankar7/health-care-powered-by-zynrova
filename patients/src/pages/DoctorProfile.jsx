@@ -23,7 +23,7 @@ const DoctorProfile = () => {
     };
 
     return (
-        <div className="profile-container">
+        <div className="dr-profile-main-container">
             {/* Navbar (Duplicated for Consistency in this task) */}
             <Navbar />
 
@@ -272,19 +272,19 @@ const DoctorProfile = () => {
             </div>
 
             {/* Footer Trust Banner */}
-            <div className="trust-banner" style={{ maxWidth: '1300px', margin: '0 auto 50px' }}>
+            <div className="trust-banner">
                 <div className="trust-item">
-                    <div className="trust-icon-box"><FaShieldAlt /></div> {/* Using ShieldAlt for verified */}
+                    <div className="trust-icon-box"><img src="/heartbox.png" alt="Verified" style={{ width: '22px', height: '22px', objectFit: 'contain' }} /></div>
                     <h4>Verified Doctors Only</h4>
                     <p>Stringent background checks for your peace of mind.</p>
                 </div>
                 <div className="trust-item">
-                    <div className="trust-icon-box"><FaCheckCircle /></div>
+                    <div className="trust-icon-box"><img src="/heartbox.png" alt="Booking" style={{ width: '22px', height: '22px', objectFit: 'contain' }} /></div>
                     <h4>Instant Booking</h4>
                     <p>Book slots in real-time with zero waiting time.</p>
                 </div>
                 <div className="trust-item">
-                    <div className="trust-icon-box"><FaHeartbeat /></div>
+                    <div className="trust-icon-box"><img src="/heartbox.png" alt="Secure" style={{ width: '22px', height: '22px', objectFit: 'contain' }} /></div>
                     <h4>Secure Medical Data</h4>
                     <p>Your privacy is our priority with HIPAA compliance.</p>
                 </div>

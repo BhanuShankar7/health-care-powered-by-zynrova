@@ -817,3 +817,83 @@
     color: #e74c3c;
     margin-left: 2px;
 }
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .booking-page-container {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .booking-content-wrapper {
+        width: 92%;
+        margin: 0 auto;
+    }
+
+    .booking-top-bar {
+        padding: 90px 20px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .booking-top-bar h2 {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .booking-stepper {
+        justify-content: center;
+    }
+
+    .step-label {
+        display: none;
+    }
+
+    .step-line {
+        width: 30px;
+    }
+
+    .booking-body {
+        flex-direction: column;
+    }
+
+    .booking-main-col, .booking-sidebar-col {
+        width: 100%;
+        flex: none;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-group.half {
+        width: 100%;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .btn-back-light, .form-actions .btn-continue {
+        width: 100%;
+    }
+
+    .review-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .booking-top-bar h2 {
+        font-size: 18px;
+    }
+
+    .booking-card {
+        padding: 15px;
+    }
+
+    .time-slots-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

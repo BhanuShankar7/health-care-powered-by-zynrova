@@ -261,7 +261,8 @@ const Specialties = () => {
             </section>
 
             {/* Trust Banner Reuse */}
-            <div className="trust-banner" style={{ maxWidth: '950px', margin: '50px auto' }}>
+            {/* Footer Trust Banner */}
+            <div className="trust-banner">
                 <div className="trust-item">
                     <div className="trust-icon-box"><img src="/heartbox.png" alt="Verified" style={{ width: '22px', height: '22px', objectFit: 'contain' }} /></div>
                     <h4>Verified Doctors Only</h4>

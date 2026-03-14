@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { FaFacebook } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import './Auth.css';
 
 const Signup = () => {
@@ -40,92 +42,96 @@ const Signup = () => {
     };
 
     return (
-        <div className="auth-container">
-            <div className="auth-card signup-mode">
-                {/* Form Section - Full Width for Signup */}
-                <div className="auth-form-section">
-                    <div className="auth-header">
-                        <h1>Create Your Account</h1>
-                        <p>Join our medical network today.</p>
+        <div className="auth-page-wrapper">
+            <Navbar />
+            <div className="auth-container signup-mode" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+                <div className="auth-card signup-mode">
+                    {/* Form Section - Full Width for Signup */}
+                    <div className="auth-form-section">
+                        <div className="auth-header">
+                            <h1>Create Your Account</h1>
+                            <p>Join our medical network today.</p>
+                        </div>
+
+                        <form onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label htmlFor="fullName">Full Name</label>
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Enter full name"
+                                    value={formData.fullName}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="emailOrPhone">Email Or Phone Number</label>
+                                <input
+                                    type="text"
+                                    id="emailOrPhone"
+                                    name="emailOrPhone"
+                                    placeholder="Enter email or phone"
+                                    value={formData.emailOrPhone}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="password">Password</label>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Enter password"
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="confirmPassword">Confirm Password</label>
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Confirm password"
+                                    value={formData.confirmPassword}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <button type="submit" className="auth-btn">Create Account</button>
+
+                            <div className="divider">
+                                Or Continue With
+                            </div>
+
+                            <div className="social-login">
+                                <div className="social-btn">
+                                    <FaFacebook size={24} color="#1877F2" />
+                                </div>
+                                <div className="social-btn">
+                                    <FcGoogle size={24} />
+                                </div>
+                            </div>
+
+                            <div className="auth-footer">
+                                Already Have An Account? <Link to="/login">Login</Link>
+                            </div>
+                        </form>
                     </div>
-
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="fullName">Full Name</label>
-                            <input
-                                type="text"
-                                id="fullName"
-                                name="fullName"
-                                placeholder="Enter full name"
-                                value={formData.fullName}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="emailOrPhone">Email Or Phone Number</label>
-                            <input
-                                type="text"
-                                id="emailOrPhone"
-                                name="emailOrPhone"
-                                placeholder="Enter email or phone"
-                                value={formData.emailOrPhone}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                placeholder="Enter password"
-                                value={formData.password}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="confirmPassword">Confirm Password</label>
-                            <input
-                                type="password"
-                                id="confirmPassword"
-                                name="confirmPassword"
-                                placeholder="Confirm password"
-                                value={formData.confirmPassword}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <button type="submit" className="auth-btn">Create Account</button>
-
-                        <div className="divider">
-                            Or Continue With
-                        </div>
-
-                        <div className="social-login">
-                            <div className="social-btn">
-                                <FaFacebook size={24} color="#1877F2" />
-                            </div>
-                            <div className="social-btn">
-                                <FcGoogle size={24} />
-                            </div>
-                        </div>
-
-                        <div className="auth-footer">
-                            Already Have An Account? <Link to="/login">Login</Link>
-                        </div>
-                    </form>
-                </div>
-                <div className="auth-image-section">
-                    <img src="/login_page_image.png" alt="Doctors Team" />
+                    <div className="auth-image-section">
+                        <img src="/login_page_image.png" alt="Doctors Team" />
+                    </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

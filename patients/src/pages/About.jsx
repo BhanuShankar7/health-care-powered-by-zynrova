@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowRight, FaHeartbeat, FaCheckCircle, FaSearch, FaCalendarCheck, FaShieldAlt } from 'react-icons/fa';
+import { FcApproval, FcSearch, FcCalendar, FcPrivacy } from "react-icons/fc";
 import { FaUserMd, FaBone } from 'react-icons/fa'; // Substituting bones/icons
 import Footer from '../components/Footer';
 import './About.css';
@@ -9,7 +10,8 @@ import Navbar from '../components/Navbar';
 
 const About = () => {
     const navigate = useNavigate();
-    const [activeTab, setActiveTab] = useState('Vision');
+    const [activeTab, setActiveTab] = useState('Vision'); // No longer needed for visual change but kept to avoid breaking other logic if any 
+
 
     return (
         <div className="about-page">
@@ -57,11 +59,16 @@ const About = () => {
                     <h2>Who We <span>Are</span></h2>
                     <p>We are a healthcare technology platform focused on simplifying how patients find doctors, book appointments, and access medical care. Our goal is to remove confusion and create a seamless healthcare experience for everyone.</p>
 
-                    <div className="who-tabs">
-                        <div className={`who-tab ${activeTab === 'Vision' ? 'active' : ''}`} onClick={() => setActiveTab('Vision')}>Vision</div>
-                        <div className={`who-tab ${activeTab === 'Goal' ? 'active' : ''}`} onClick={() => setActiveTab('Goal')}>Goal</div>
+                    <div className="who-badges">
+                        <div className="who-badge">
+                            <div className="who-badge-title">Visionary</div>
+                            <div className="who-badge-subtitle">Leadership</div>
+                        </div>
+                        <div className="who-badge">
+                            <div className="who-badge-title">Smart</div>
+                            <div className="who-badge-subtitle">Technology</div>
+                        </div>
                     </div>
-                    {/* Content could change based on tab, but static text used for visual match */}
                 </div>
             </section>
 
@@ -72,22 +79,22 @@ const About = () => {
 
                 <div className="features-grid">
                     <div className="feature-card">
-                        <div className="feature-icon"><img src="/cardiologist.png" alt="icon" style={{ width: '38px', height: '38px', objectFit: 'contain' }} /></div>
+                        <div className="feature-icon"><FcApproval size={42} /></div>
                         <h4>Verified Medical Network</h4>
                         <p>Every doctor is carefully verified for credentials and experience.</p>
                     </div>
                     <div className="feature-card">
-                        <div className="feature-icon"><img src="/cardiologist.png" alt="icon" style={{ width: '38px', height: '38px', objectFit: 'contain' }} /></div>
+                        <div className="feature-icon"><FcSearch size={42} /></div>
                         <h4>Smart Discovery</h4>
                         <p>Find doctors by specialty, symptoms, or location effortlessly.</p>
                     </div>
                     <div className="feature-card">
-                        <div className="feature-icon"><img src="/cardiologist.png" alt="icon" style={{ width: '38px', height: '38px', objectFit: 'contain' }} /></div>
+                        <div className="feature-icon"><FcCalendar size={42} /></div>
                         <h4>Flexible Consultations</h4>
                         <p>Book in-clinic or online consultations with ease.</p>
                     </div>
                     <div className="feature-card">
-                        <div className="feature-icon"><img src="/cardiologist.png" alt="icon" style={{ width: '38px', height: '38px', objectFit: 'contain' }} /></div>
+                        <div className="feature-icon"><FcPrivacy size={42} /></div>
                         <h4>Secure & Private</h4>
                         <p>Your health data is protected with industry-grade security.</p>
                     </div>
@@ -154,21 +161,21 @@ const About = () => {
             {/* How It Works */}
             <section className="how-it-works">
                 <h2 className="section-head-center">How It <span style={{ color: '#27B992' }}>Works</span></h2>
-                <p style={{ color: '#888' }}>A simple path to better health.</p>
+                <p className="section-subtitle-highlight">A simple path to better health.</p>
 
                 <div className="how-steps">
                     <div className="how-step">
-                        <img src="/orthopedic.png" alt="icon" style={{ width: '36px', height: '36px', objectFit: 'contain' }} className="step-icon-img" />
+                        <div className="how-icon-box"><FcSearch size={40} /></div>
                         <h4>Search Doctor Or Symptom</h4>
                         <p>Find specialized care in seconds.</p>
                     </div>
                     <div className="how-step">
-                        <img src="/orthopedic.png" alt="icon" style={{ width: '36px', height: '36px', objectFit: 'contain' }} className="step-icon-img" />
+                        <div className="how-icon-box"><FcCalendar size={40} /></div>
                         <h4>Compare Availability</h4>
                         <p>Pick a time that works for you.</p>
                     </div>
                     <div className="how-step">
-                        <img src="/orthopedic.png" alt="icon" style={{ width: '36px', height: '36px', objectFit: 'contain' }} className="step-icon-img" />
+                        <div className="how-icon-box"><FcApproval size={40} /></div>
                         <h4>Book & Consult</h4>
                         <p>Consult with confidence and ease.</p>
                     </div>

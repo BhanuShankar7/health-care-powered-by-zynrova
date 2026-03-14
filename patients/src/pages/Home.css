@@ -884,7 +884,7 @@
     background: #fff;
     margin-bottom: 20px;
     border-radius: 15px;
-    padding: 38px 40px;
+    padding: 20px 30px;
     text-align: left;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
@@ -928,11 +928,69 @@
 
 /* Mobile Responsiveness Updates */
 @media (max-width: 900px) {
+    .hero-section {
+        height: auto;
+        padding: 110px 15px 60px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+        padding: 0 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+
+    .hero-search-box {
+        position: relative;
+        width: 92%;
+        max-width: 100%;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        margin: -30px auto 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        background: white;
+        border-radius: 20px;
+        z-index: 5;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .btn-search {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .stats-bar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 15px;
+        padding: 60px 20px 40px;
+    }
+
+    .stat-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 
     .booking-section,
     .partner-section,
     .consultation-banner {
         flex-direction: column;
+        padding: 40px 20px;
     }
 
     .booking-image,
@@ -941,12 +999,25 @@
         margin-top: 30px;
     }
 
-    .stats-bar {
-        flex-wrap: wrap;
-        gap: 35px;
+    .consultation-banner {
+        gap: 20px;
     }
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .stats-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
     }
 }

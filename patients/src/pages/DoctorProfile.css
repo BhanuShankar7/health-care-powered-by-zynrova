@@ -1,5 +1,5 @@
 /* Doctor Profile Page Styles */
-.profile-container {
+.dr-profile-main-container {
     width: 100%;
     min-height: 100vh;
     background-color: #f8f9fa;
@@ -609,14 +609,40 @@
     line-height: 1.5;
 }
 
+
 /* Mobile Responsive */
 @media (max-width: 900px) {
+    .profile-header-area {
+        padding: 100px 20px 30px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .back-btn-wrapper {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    .page-title {
+        font-size: 24px;
+        text-align: center;
+    }
+
     .profile-content {
         grid-template-columns: 1fr;
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+
+    .doctor-header-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
     }
 
     .clinic-card-content {
@@ -626,5 +652,21 @@
 
     .clinic-map {
         width: 100%;
+        min-height: 200px;
+    }
+
+    .trust-banner {
+        flex-direction: column;
+        padding: 40px;
+        margin: 30px 15px 50px;
+        border-radius: 20px;
+    }
+
+    .trust-item {
+        margin-bottom: 30px;
+    }
+
+    .trust-item:last-child {
+        margin-bottom: 0;
     }
 }

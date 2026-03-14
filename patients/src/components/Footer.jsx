@@ -8,9 +8,9 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-grid">
                 <div className="footer-col">
-                    <div className="nav-logo" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column' }}>
-                        <img src="/footer_logo.png" alt="Footer Logo" style={{ height: '85px', objectFit: 'contain', marginBottom: '16px', alignSelf: 'center' }} />
-                        <span className="nav-logo-text" style={{ color: '#ccc', fontSize: '13px', fontWeight: '500', letterSpacing: '0.5px', textTransform: 'lowercase', alignSelf: 'center', textAlign: 'center' }}>
+                    <div className="nav-logo" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                        <img src="/footer_logo.png" alt="Footer Logo" style={{ height: '85px', objectFit: 'contain', marginBottom: '16px' }} />
+                        <span className="nav-logo-text" style={{ color: '#ccc', fontSize: '13px', fontWeight: '500', letterSpacing: '0.5px', textTransform: 'lowercase', textAlign: 'left' }}>
                             @ powered by zynrova
                         </span>
                     </div>

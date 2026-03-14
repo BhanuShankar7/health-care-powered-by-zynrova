@@ -17,6 +17,12 @@ body {
     padding: 0;
 }
 
+.auth-page-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
+
 .auth-container {
     width: 100%;
     min-height: 100vh;
@@ -238,18 +244,32 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .auth-page-wrapper {
+        padding-top: 100px;
+    }
+
+    .auth-container {
+        padding: 20px 10px;
+        min-height: auto;
+    }
+
     .auth-card, .auth-card.signup-mode {
         flex-direction: column;
-        max-width: 500px;
+        width: 100%;
+        height: auto;
+        max-width: 450px;
     }
 
     .auth-image-section {
         display: none;
-        /* Hide image on mobile usually, or show on top */
     }
 
     .auth-form-section {
-        padding: 30px;
+        padding: 40px 25px;
+    }
+
+    .auth-btn {
+        width: 100%;
     }
 }
